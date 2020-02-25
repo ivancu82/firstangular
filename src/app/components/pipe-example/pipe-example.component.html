@@ -1,0 +1,6 @@
+<div>
+  <h4>Filter the names you want</h4>
+  <input type="text" [(ngModel)]="nameFilter" />
+  <button type="button" (click)="changeCase()">Name to uppercase</button>
+  <h4 *ngFor="let name of (nameList | filterByName: nameFilter)">{{ isUppercase ? (name | uppercase : name) : name }}</h4>
+</div>

@@ -1,0 +1,8 @@
+<button (click)="toggleVisibility()">{{ showName ? 'hide' : 'show' }} name</button>
+<button (click)="changeColor()">Change name color</button>
+
+<p *ngIf="showName" [className]="redColor ? 'red-name' : 'blue-name'">{{ name }}</p>
+
+<!-- <div *ngIf="numberArray.length">
+  <p *ngFor="let number of numberArray">{{ number }}</p>
+</div> -->

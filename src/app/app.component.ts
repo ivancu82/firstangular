@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'upgrade-app';
+  message: string;
+
+  constructor() {
+    // this.message = 'This is a default message.';
+  }
+
+  setMessage(newMessage: string): void {
+    this.message = newMessage;
+  }
 }
+

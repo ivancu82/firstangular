@@ -1,0 +1,21 @@
+<h3>Introduce your username</h3>
+<!-- <input type="text" [(ngModel)]="username" (ngModelChange)="filterName($event)"> -->
+<input type="text" [(ngModel)]="username">
+
+<div>
+  <!-- <h4 *ngFor="let name of nameList">{{ name }}</h4> -->
+  <h4 *ngFor="let name of (nameList | filterNames: username)">{{ name }}</h4>
+</div>
+
+<h3>Student Form example</h3>
+<form [formGroup]="studentForm" (ngSubmit)="onSubmit(studentForm.value)">
+  <label for="name">
+    Name
+  </label>
+  <input id="name" type="text" formControlName="studentName">
+  <ul *ngIf="userErrors.length" style="color: red;">
+    <li *ngFor="let error of userErrors">{{ errorMessages[error] || error }}</li>
+  </ul>
+
+  <button class="button" type="submit">Submit</button>
+</form>
